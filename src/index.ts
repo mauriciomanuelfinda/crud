@@ -1,12 +1,20 @@
 import fastify from "fastify"
 import Routes from "./routes"
+import cors from '@fastify/cors'
+import { config } from "dotenv"
 
+config()
 const app = fastify()
 
 
 const start = async () => {
     try {
-        const port = 3033
+        
+        const port = Number(process.env.PORT)
+        await app.register(cors, {
+            origin: '*',
+            credentials: true
+        });
         //Rotas
         app.register(Routes)
         await app.listen({ port }).then(() => {

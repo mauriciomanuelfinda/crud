@@ -20,7 +20,7 @@ class TarefaServices {
             return reply.send({ error: "id inválido" })
         }
         const data = await tarefaModel.update({ id, title, description })
-        return reply.send({ message: "Dados actuali", data })
+        return reply.send({ message: "Dados actualizados com sucesso", data })
     }
     async delete(req: FastifyRequest, reply: FastifyReply) {
         const { id } = tarefaValidations.getDataForDelete.parse(req.params)
