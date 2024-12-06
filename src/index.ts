@@ -10,7 +10,7 @@ const app = fastify()
 const start = async () => {
     try {
 
-        const host = process.env.HOST || 127.0.0.1
+        const host = process.env.HOST || "0.0.0.0"
         const port = Number(process.env.PORT)
         await app.register(cors, {
             origin: '*',
