@@ -9,7 +9,8 @@ const app = fastify()
 
 const start = async () => {
     try {
-        
+
+        const host = process.env.HOST || 127.0.0.1
         const port = Number(process.env.PORT)
         await app.register(cors, {
             origin: '*',
@@ -17,7 +18,7 @@ const start = async () => {
         });
         //Rotas
         app.register(Routes)
-        await app.listen({ port }).then(() => {
+        await app.listen({ port, host }).then(() => {
             console.log(`Server is running on ${port}`)
         })
     } catch (err) {
