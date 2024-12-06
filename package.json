@@ -9,8 +9,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node --watch ./build/index.js",
-    "migrate":"prisma migrate dev",
-    "generate":"prisma generate",
+    "migrate":"npx prisma migrate dev",
+    "generate":"npx prisma generate",
     "dev": "tsnd ./src/index.ts"
   },
   "dependencies": {
