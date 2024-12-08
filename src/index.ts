@@ -6,7 +6,6 @@ import { config } from "dotenv"
 config()
 const app = fastify()
 
-
 const start = async () => {
     try {
 
